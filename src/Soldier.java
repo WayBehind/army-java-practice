@@ -4,6 +4,12 @@ public abstract class Soldier implements Abilities {
     protected int damageValue;
     protected Stance stance;
 
+    protected enum Move {
+        ATTACK,
+        DEFFEND,
+        SPECIAL
+    }
+
     public Soldier(String name, int hitPoints, int damageValue, Stance stance) {
         this.name = name;
         this.hitPoints = hitPoints;
@@ -11,18 +17,15 @@ public abstract class Soldier implements Abilities {
         this.stance = stance;
     }
 
-    @Override
-    public void attack() {
-        System.out.println(this + "attacks");
+    public void setStance(Stance stance) {
+        this.stance = stance;
     }
 
     @Override
-    public void defend() {
-
-    }
-
-    @Override
-    public void special() {
-
+    public String toString() {
+        return "Soldier " + this.getClass() + " named " + name +
+                ", Hit Points: " + hitPoints +
+                ", Damage Value: " + damageValue +
+                ", " + stance.getDescription() + " ";
     }
 }

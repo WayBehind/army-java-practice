@@ -1,7 +1,7 @@
 public enum Stance {
     DEFENSIVE("in Defensive stace"),
     OFFENSIVE("in Offensive stace"),
-    RESERVE("in Reserve");
+    CAUTIOUS("in Cautious stance");
     private final String description;
 
     Stance(String description) {
